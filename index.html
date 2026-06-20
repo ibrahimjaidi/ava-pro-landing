@@ -79,7 +79,7 @@ h2.title{font-size:clamp(1.8rem,5.2vw,2.8rem);text-align:center;margin-bottom:14
 .lead{color:var(--muted);font-size:clamp(1rem,2.4vw,1.18rem);max-width:660px;margin-inline:auto;text-align:center}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .section-pad{padding:74px 0}
-@media(min-width:760px){ .section-pad{padding:108px 0} }
+@media(min-width:760px){ .section-pad{padding:84px 0} }
 .center{text-align:center}
 
 /* ── Buttons ── */
@@ -147,9 +147,20 @@ header .btn{padding:10px 18px;font-size:.92rem}
 @keyframes burst4{0%{opacity:0;transform:translate(0,0) scale(.2)}24%{opacity:1}68%{opacity:1}100%{opacity:0;transform:translate(140px,150px) scale(1.1) rotate(-20deg)}}
 
 /* ── Hero ── */
-.hero{padding:46px 0 36px;text-align:center;overflow:hidden}
+.hero{padding:40px 0 30px;text-align:center;overflow:hidden}
 .hero .eyebrow{margin-bottom:18px}
-.stage{position:relative;width:min(420px,86%);margin:6px auto 26px;aspect-ratio:1/1;perspective:1100px}
+.hero-grid{display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero-grid .stage{order:-1}
+@media(min-width:900px){
+  .hero{padding:64px 0 40px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;text-align:start}
+  .hero-grid .stage{order:0;margin:0;width:min(440px,100%);justify-self:center}
+  .hero-copy{text-align:start}
+  .hero-copy h1{margin:0 0 18px;max-width:none}
+  .hero-copy .sub{margin:0 0 28px;max-width:540px}
+  .hero-copy .hero-cta,.hero-copy .badges{justify-content:flex-start}
+}
+.stage{position:relative;width:min(420px,86%);margin:6px auto 22px;aspect-ratio:1/1;perspective:1100px}
 .stage .halo{position:absolute;inset:4%;border-radius:50%;z-index:0;
   background:radial-gradient(circle at 50% 46%,rgba(47,127,240,.45),rgba(27,52,184,.16) 42%,transparent 66%);
   filter:blur(4px);animation:pulse 4.2s ease-in-out infinite}
@@ -196,15 +207,16 @@ header .btn{padding:10px 18px;font-size:.92rem}
 /* ── Problem ── */
 .pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:640px;margin:34px auto 0}
 @media(min-width:680px){ .pain-grid{grid-template-columns:repeat(3,1fr)} }
-.pain{display:flex;align-items:center;gap:10px;padding:16px;border-radius:var(--radius-sm);
+.pain{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:var(--radius-sm);
   background:var(--surface);border:1px solid var(--line);font-weight:700;font-size:.96rem}
 .pain .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);flex:none;box-shadow:0 0 12px var(--cyan)}
 
 /* ── Benefits (bilingue, style marque) ── */
 .benefits{background:linear-gradient(180deg,transparent,rgba(8,15,36,.5),transparent)}
 .ben-grid{display:grid;gap:14px;margin-top:40px;grid-template-columns:1fr}
-@media(min-width:680px){ .ben-grid{grid-template-columns:1fr 1fr} }
-.ben{display:flex;align-items:center;gap:16px;padding:20px 22px}
+@media(min-width:560px){ .ben-grid{grid-template-columns:1fr 1fr} }
+@media(min-width:1000px){ .ben-grid{grid-template-columns:repeat(3,1fr)} }
+.ben{display:flex;align-items:center;justify-content:center;gap:14px;padding:22px}
 .ben .chk{width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;
   background:var(--grad);box-shadow:0 0 0 4px rgba(47,127,240,.12)}
 .ben .chk svg{width:20px;height:20px;color:#05122c}
@@ -278,9 +290,9 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .use-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
 
 /* ── Packs ── */
-.packs-grid{display:grid;gap:18px;margin-top:42px}
-@media(min-width:860px){ .packs-grid{grid-template-columns:repeat(3,1fr);align-items:stretch} }
-.pack{display:flex;flex-direction:column;text-align:center;padding:28px 24px;position:relative;transition:transform .3s}
+.packs-grid{display:grid;gap:22px;margin-top:42px;max-width:440px;margin-inline:auto}
+@media(min-width:860px){ .packs-grid{grid-template-columns:repeat(3,1fr);align-items:stretch;max-width:none} }
+.pack{display:flex;flex-direction:column;text-align:center;padding:28px 24px;position:relative;overflow:visible;transition:transform .3s}
 .pack:hover{transform:translateY(-5px)}
 .pack.featured{border-color:var(--blue)}
 .pack.featured::before{opacity:1;background:linear-gradient(140deg,rgba(120,180,255,.9),rgba(56,208,255,.2) 45%,transparent)}
@@ -452,8 +464,20 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap reveal">
-    <span class="eyebrow en">Premium Men's Formula</span>
+  <div class="wrap reveal hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow en">Premium Men's Formula</span>
+      <h1>رجّع طاقتك، ثقتك وحضورك مع <span class="grad-text en">AVA&nbsp;PRO</span></h1>
+      <p class="sub">تركيبة بريميوم بمكوّنات طبيعية، مصمّمة للرجال اللي بغاو يحافظو على الطاقة، التركيز، الأداء والثقة فحياتهم اليومية.</p>
+      <div class="hero-cta">
+        <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
+      </div>
+      <div class="badges">
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>الدفع عند الاستلام</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>توصيل سري</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>حتى لباب الدار</span>
+      </div>
+    </div>
     <div class="stage" id="stage">
       <div class="halo"></div><div class="ering"></div><div class="ering r2"></div>
       <div class="tilt" id="tilt">
@@ -461,18 +485,8 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
         <canvas id="box3d" class="box3d"></canvas>
       </div>
     </div>
-    <h1>رجّع طاقتك، ثقتك وحضورك مع <span class="grad-text en">AVA&nbsp;PRO</span></h1>
-    <p class="sub">تركيبة بريميوم بمكوّنات طبيعية، مصمّمة للرجال اللي بغاو يحافظو على الطاقة، التركيز، الأداء والثقة فحياتهم اليومية.</p>
-    <div class="hero-cta">
-      <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
-    </div>
-    <div class="badges">
-      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>الدفع عند الاستلام</span>
-      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>توصيل سري</span>
-      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>حتى لباب الدار</span>
-    </div>
-    <div class="scrollcue"></div>
   </div>
+  <div class="scrollcue"></div>
 </section>
 
 <!-- Marquee -->
