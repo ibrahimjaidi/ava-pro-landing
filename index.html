@@ -108,8 +108,8 @@ h2.title{font-size:clamp(1.8rem,5.2vw,2.8rem);text-align:center;margin-bottom:14
 .a-en{display:block;color:var(--muted-2);font-size:.9rem;margin-top:7px;line-height:1.6;direction:ltr}
 .sol-body .t-en,.sol-body .lead-en{text-align:right;margin-inline:0}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.section-pad{padding:58px 0}
-@media(min-width:760px){ .section-pad{padding:76px 0} }
+.section-pad{padding:40px 0}
+@media(min-width:760px){ .section-pad{padding:58px 0} }
 .center{text-align:center}
 
 /* ── Buttons ── */
@@ -157,12 +157,12 @@ header .btn{padding:10px 18px;font-size:.92rem}
 @keyframes lbar{0%{transform:translateX(-120%)}100%{transform:translateX(300%)}}
 
 /* ── Hero ── */
-.hero{padding:40px 0 30px;text-align:center;overflow:hidden}
+.hero{padding:24px 0 18px;text-align:center;overflow:hidden}
 .hero .eyebrow{margin-bottom:18px}
 .hero-grid{display:flex;flex-direction:column;align-items:center;gap:18px}
 .hero-grid .stage{order:-1}
 @media(min-width:900px){
-  .hero{padding:44px 0 30px}
+  .hero{padding:30px 0 22px}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;text-align:start}
   .hero-grid .stage{order:0;margin:0;width:min(540px,108%);justify-self:center}
   .hero-copy{text-align:start}
@@ -310,19 +310,19 @@ header .btn{padding:10px 18px;font-size:.92rem}
 
 /* ── Benefits (bilingue, style marque) ── */
 .benefits{background:linear-gradient(180deg,transparent,rgba(8,15,36,.5),transparent)}
-.ben-grid{display:grid;gap:14px;margin-top:40px;grid-template-columns:1fr}
-@media(min-width:560px){ .ben-grid{grid-template-columns:1fr 1fr} }
+.ben-grid{display:grid;gap:12px;margin-top:30px;grid-template-columns:1fr 1fr}
 @media(min-width:1000px){ .ben-grid{grid-template-columns:repeat(3,1fr)} }
-.ben{display:flex;align-items:center;justify-content:center;gap:14px;padding:22px}
+.ben{display:flex;flex-direction:column;align-items:center;text-align:center;gap:9px;padding:20px 12px}
 .ben .chk{width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;
   background:var(--grad);box-shadow:0 0 0 4px rgba(47,127,240,.12)}
 .ben .chk svg{width:20px;height:20px;color:#05122c}
 .ben .en{display:block;font-family:'Chakra Petch',sans-serif;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;font-size:.82rem;color:var(--blue-2);line-height:1.3}
-.ben b{font-size:1.32rem;font-weight:800}
+.ben b{font-size:1.1rem;font-weight:800;line-height:1.25;display:block;margin-top:3px}
+@media(min-width:760px){ .ben b{font-size:1.24rem} }
 
 /* ── Lifestyle band ── */
-.life{position:relative;min-height:66vh;display:grid;place-items:center;overflow:hidden;text-align:center}
+.life{position:relative;min-height:44vh;display:grid;place-items:center;overflow:hidden;text-align:center}
 .life .lbg{position:absolute;inset:-12% 0;z-index:0;will-change:transform}
 .life .lbg-img{position:absolute;inset:-8%;background-size:cover;background-position:center 30%;
   filter:grayscale(.32) brightness(.48) contrast(1.06);animation:kenburns 22s ease-in-out infinite alternate;will-change:transform}
@@ -543,10 +543,14 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 @keyframes slide{0%{inset-inline-start:-14%}100%{inset-inline-start:100%}}
 
 /* ── Reveal + keyframes ── */
-.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal{opacity:0;transform:translateY(42px) scale(.985);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.16,.84,.3,1)}
 .js .reveal.in{opacity:1;transform:none}
-.js .stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;transition-delay:calc(var(--i,0)*70ms)}
+.js .stagger>*{opacity:0;transform:translateY(36px) scale(.955);transition:opacity .6s,transform .75s cubic-bezier(.16,.84,.3,1);transition-delay:calc(var(--i,0)*85ms)}
 .js .stagger.in>*{opacity:1;transform:none}
+.js .reveal .center .title::after{transform:scaleX(0);transition:transform .6s .25s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in .center .title::after{transform:scaleX(1)}
+.form-card.flash{animation:formFlash 1.2s ease}
+@keyframes formFlash{0%{box-shadow:0 0 0 0 rgba(56,208,255,0)}20%{box-shadow:0 0 0 3px rgba(56,208,255,.55),0 18px 50px -8px rgba(56,208,255,.4)}100%{box-shadow:0 0 0 0 rgba(56,208,255,0)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes pulse{0%,100%{opacity:.65;transform:scale(.97)}50%{opacity:1;transform:scale(1.04)}}
@@ -558,6 +562,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
   *{scroll-behavior:auto!important;animation:none!important}
   .js .reveal,.js .stagger>*{opacity:1!important;transform:none!important;transition:none!important}
   .hero h1 .w{opacity:1!important;transform:none!important}
+  .reveal .center .title::after{transform:none!important}
   #energy{display:none}
 }
 </style>
@@ -583,7 +588,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <header class="site">
   <div class="wrap">
     <a href="#top" class="brand"><img src="assets/logo.webp" alt="AVA PRO" width="760" height="227"></a>
-    <a href="#packs" class="btn btn-primary btn-sm">طلب دابا</a>
+    <a href="#form" class="btn btn-primary btn-sm">طلب دابا</a>
   </div>
 </header>
 <span id="top"></span>
@@ -597,7 +602,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <p class="hero-en" dir="ltr">Reclaim your energy, focus &amp; presence — every day.</p>
       <p class="sub">مكمّل طبيعي بريميوم للرجال — طاقة، تركيز وحضور أقوى فروتين يومي بسيط.</p>
       <div class="hero-cta">
-        <a href="#packs" class="btn btn-primary">طلب دابا · Order Now (COD)</a>
+        <a href="#form" class="btn btn-primary">طلب دابا · Order Now (COD)</a>
       </div>
       <p class="hero-price">ابدأ من <b>499 درهم</b> · توصيل لكل المغرب · خلّص منين توصلك<span class="en2" dir="ltr" style="margin-top:5px">From 499 MAD · Delivery across Morocco · Pay on delivery</span></p>
       <div class="badges">
@@ -895,7 +900,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
     <p class="lead">القوة الحقيقية كتبدأ من روتين يومي — ابدأ ديالك اليوم.</p>
     <p class="lead-en" dir="ltr">Real strength starts with a daily routine — start yours today.</p>
     <div class="hero-cta">
-      <a href="#packs" class="btn btn-primary">طلب دابا · Order Now (COD)</a>
+      <a href="#form" class="btn btn-primary">طلب دابا · Order Now (COD)</a>
     </div>
   </div>
 </section>
@@ -912,7 +917,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <a href="#" class="wa-float" aria-label="WhatsApp" data-wa="سلام، بغيت نستفسر على AVA PRO"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
 
 <div class="mobile-bar">
-  <a href="#packs" class="btn btn-primary">طلب دابا</a>
+  <a href="#form" class="btn btn-primary">طلب دابا</a>
   <a href="#" class="btn btn-wa" data-wa="سلام، بغيت نطلب AVA PRO"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>WhatsApp</a>
 </div>
 
@@ -979,12 +984,29 @@ addEventListener('scroll',()=>{ if(rt)return; rt=true; requestAnimationFrame(()=
 addEventListener('resize',revealCheck);
 revealCheck();
 
-/* Packs -> form */
+/* Scroll rapide + flash vers le formulaire (boutons commander) */
+function smoothTo(y,dur){
+  const start=scrollY, dist=y-start, t0=performance.now();
+  if(reduce||Math.abs(dist)<4){ scrollTo(0,y); return; }
+  (function step(t){ const p=Math.min((t-t0)/dur,1); const e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+    scrollTo(0,start+dist*e); if(p<1)requestAnimationFrame(step); })(t0);
+}
+function goForm(focus){
+  const el=document.getElementById('form'); if(!el)return;
+  const y=Math.max(0, el.getBoundingClientRect().top+scrollY-60);
+  smoothTo(y,640);
+  const card=el.querySelector('.form-card');
+  setTimeout(()=>{ if(card){ card.classList.remove('flash'); void card.offsetWidth; card.classList.add('flash'); }
+    if(focus){ const f=document.getElementById('f-name'); if(f)f.focus({preventScroll:true}); } }, reduce?0:680);
+}
+document.querySelectorAll('a[href="#form"]').forEach(a=>a.addEventListener('click',e=>{ e.preventDefault(); goForm(false); }));
+
+/* Packs -> form (pré-sélection de l'offre) */
 document.querySelectorAll('[data-pack]').forEach(btn=>btn.addEventListener('click',()=>{
   const offer=btn.getAttribute('data-pack'); const sel=document.getElementById('f-offer');
   trackEvent('AddToCart',{content_name:offer});
   const opt=[...sel.options].find(o=>o.value&&offer.includes(o.value.split('—')[0].trim())); if(opt)sel.value=opt.value;
-  document.getElementById('form').scrollIntoView({behavior:'smooth'}); setTimeout(()=>document.getElementById('f-name').focus(),500);
+  goForm(true);
 }));
 
 /* Order form -> WhatsApp */
