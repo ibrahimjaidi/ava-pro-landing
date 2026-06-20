@@ -93,6 +93,8 @@ h1,h2,h3{line-height:1.22;letter-spacing:-.01em;font-weight:800}
   padding:8px 18px;border:1px solid var(--line-2);border-radius:999px;background:rgba(47,127,240,.07);margin-bottom:22px}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
 h2.title{font-size:clamp(1.8rem,5.2vw,2.8rem);text-align:center;margin-bottom:14px;font-weight:900}
+.center .title::after{content:"";display:block;width:54px;height:3px;margin:16px auto 0;border-radius:3px;
+  background:var(--grad);box-shadow:0 0 14px rgba(56,208,255,.6)}
 .lead{color:var(--muted);font-size:clamp(1rem,2.4vw,1.18rem);max-width:660px;margin-inline:auto;text-align:center}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .section-pad{padding:58px 0}
@@ -195,8 +197,16 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .brandword::after{content:"";display:block;height:4px;margin:16px auto 0;width:46%;border-radius:4px;
   background:var(--grad);box-shadow:0 0 22px rgba(56,208,255,.8);animation:barGrow 3.4s ease-in-out infinite}
 @keyframes barGrow{0%,100%{width:38%;opacity:.6}50%{width:74%;opacity:1}}
-.hero-grid.in .brandword{animation:shimmer 6s linear infinite,brandIn 1s cubic-bezier(.2,.7,.2,1) both}
+.hero-grid.in .brandword{animation:shimmer 6s linear infinite,brandIn 1s cubic-bezier(.2,.7,.2,1) .42s both}
 @keyframes brandIn{0%{opacity:0;transform:translateY(18px) scale(.9)}60%{opacity:1}100%{opacity:1;transform:none}}
+.js .hero h1 .w{display:inline-block;opacity:0;transform:translateY(18px)}
+.hero-grid.in h1 .w{animation:wordUp .6s cubic-bezier(.2,.7,.2,1) both}
+.hero-grid.in h1 .w:nth-child(1){animation-delay:.04s}
+.hero-grid.in h1 .w:nth-child(2){animation-delay:.12s}
+.hero-grid.in h1 .w:nth-child(3){animation-delay:.20s}
+.hero-grid.in h1 .w:nth-child(4){animation-delay:.28s}
+.hero-grid.in h1 .w:nth-child(5){animation-delay:.36s}
+@keyframes wordUp{to{opacity:1;transform:none}}
 .hero .sub{color:var(--muted);font-size:clamp(1rem,2.6vw,1.2rem);max-width:600px;margin:0 auto 28px}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
 .hero-price{color:var(--muted);font-size:.95rem;margin:0 0 22px}
@@ -298,16 +308,20 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .ben b{font-size:1.32rem;font-weight:800}
 
 /* ── Lifestyle band ── */
-.life{position:relative;min-height:62vh;display:grid;place-items:center;overflow:hidden;text-align:center}
-.life .lbg{position:absolute;inset:-12% 0;z-index:0;background-size:cover;background-position:center 30%;
-  filter:grayscale(.3) brightness(.5) contrast(1.05);will-change:transform}
+.life{position:relative;min-height:66vh;display:grid;place-items:center;overflow:hidden;text-align:center}
+.life .lbg{position:absolute;inset:-12% 0;z-index:0;will-change:transform}
+.life .lbg-img{position:absolute;inset:-8%;background-size:cover;background-position:center 30%;
+  filter:grayscale(.32) brightness(.48) contrast(1.06);animation:kenburns 22s ease-in-out infinite alternate;will-change:transform}
 .life::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,var(--bg),rgba(6,10,24,.55) 40%,rgba(6,10,24,.55) 60%,var(--bg)),
-  radial-gradient(60% 60% at 50% 50%,rgba(47,127,240,.18),transparent 70%)}
-.life .lc{position:relative;z-index:2;padding:60px 20px}
-.life h2{font-family:'Chakra Petch',sans-serif;font-size:clamp(1.5rem,5.4vw,3rem);font-weight:700;
-  letter-spacing:.04em;text-transform:uppercase;line-height:1.25}
-.life p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+  background:linear-gradient(180deg,var(--bg),rgba(6,10,24,.5) 38%,rgba(6,10,24,.5) 62%,var(--bg)),
+  radial-gradient(58% 58% at 50% 50%,rgba(47,127,240,.22),transparent 72%)}
+.life .lc{position:relative;z-index:2;padding:60px 20px;max-width:760px}
+.life .l-line{width:60px;height:3px;margin:0 auto 22px;border-radius:3px;background:var(--grad);box-shadow:0 0 16px rgba(56,208,255,.7)}
+.life h2{font-family:'Chakra Petch',sans-serif;font-size:clamp(1.6rem,5.6vw,3.1rem);font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;line-height:1.22}
+.life h2 .grad-text{filter:drop-shadow(0 2px 16px rgba(47,127,240,.5))}
+.life p{color:var(--muted);margin-top:16px;font-size:1.08rem}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12)}}
 
 /* ── Ingredients orbs ── */
 .ingredients{background:linear-gradient(180deg,transparent,rgba(8,15,36,.5),transparent)}
@@ -497,6 +511,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 @media(prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important;animation:none!important}
   .js .reveal,.js .stagger>*{opacity:1!important;transform:none!important;transition:none!important}
+  .hero h1 .w{opacity:1!important;transform:none!important}
   #energy{display:none}
 }
 </style>
@@ -532,7 +547,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
   <div class="wrap reveal hero-grid">
     <div class="hero-copy">
       <span class="eyebrow en">Premium Men's Formula</span>
-      <h1>رجّع طاقتك، ثقتك وحضورك مع<span class="brandword">AVA&nbsp;PRO</span></h1>
+      <h1><span class="w">رجّع</span> <span class="w">طاقتك،</span> <span class="w">ثقتك</span> <span class="w">وحضورك</span> <span class="w">مع</span><span class="brandword">AVA&nbsp;PRO</span></h1>
       <p class="sub">تركيبة بريميوم بمكوّنات طبيعية، مصمّمة للرجال اللي بغاو يحافظو على الطاقة، التركيز، الأداء والثقة فحياتهم اليومية.</p>
       <div class="hero-cta">
         <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
@@ -637,9 +652,10 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 
 <!-- LIFESTYLE -->
 <section class="life">
-  <div class="lbg" id="lifebg" style="background-image:url('assets/men-fog.jpg')"></div>
+  <div class="lbg" id="lifebg"><div class="lbg-img" style="background-image:url('assets/men-fog.jpg')"></div></div>
   <div class="lc reveal">
-    <h2>This is how a<br>real man should feel</h2>
+    <div class="l-line"></div>
+    <h2 dir="ltr">This is how a<br><span class="grad-text">real man</span> should feel</h2>
     <p>طاقة، ثقة وحضور — كل يوم.</p>
   </div>
 </section>
