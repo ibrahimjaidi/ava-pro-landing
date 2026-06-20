@@ -33,6 +33,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -240,6 +241,11 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .pen{display:block;font-family:'Chakra Petch',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   font-size:.92rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .par{display:block;color:var(--muted);font-size:.88rem;margin-top:3px}
+.pico svg{animation:picoPulse 3s ease-in-out infinite}
+.pillar:nth-child(2) .pico svg{animation-delay:.4s}
+.pillar:nth-child(3) .pico svg{animation-delay:.8s}
+.pillar:nth-child(4) .pico svg{animation-delay:1.2s}
+@keyframes picoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
 
 /* ── Glass cards ── */
 .glass{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
@@ -993,10 +999,9 @@ if(!reduce){
 }
 </script>
 
-<!-- ════ Boîte AVA PRO en vraie 3D (WebGL / Three.js) ════ -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<!-- ════ Boîte AVA PRO en vraie 3D (WebGL / Three.js) — chargée en lazy (perf) ════ -->
 <script>
-(function(){
+function initBox3D(){
   const canvas=document.getElementById('box3d'), stage=document.getElementById('stage');
   const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
   const touch=matchMedia('(hover:none)').matches;
@@ -1063,6 +1068,14 @@ if(!reduce){
   }
   tick();
   document.addEventListener('visibilitychange',()=>{ document.hidden?cancelAnimationFrame(raf):tick(); });
+}
+/* Lazy-load Three.js après le 1er rendu — le packshot fallback reste affiché jusqu'à ce que la 3D soit prête */
+(function(){
+  function load(){ if(window.__b3d)return; window.__b3d=1;
+    var s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js';
+    s.onload=initBox3D; document.head.appendChild(s); }
+  function kick(){ ('requestIdleCallback' in window)?requestIdleCallback(load,{timeout:2500}):setTimeout(load,1200); }
+  if(document.readyState==='complete') kick(); else addEventListener('load',kick);
 })();
 </script>
 </body>
