@@ -18,6 +18,11 @@
 <meta name="twitter:title" content="AVA PRO — طاقة، ثقة وأداء للرجال" />
 <meta name="twitter:image" content="https://ibrahimjaidi.github.io/ava-pro-landing/assets/og.jpg" />
 
+<!-- Données structurées (SEO / rich results) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@type":"Product","name":"AVA PRO","image":"https://ibrahimjaidi.github.io/ava-pro-landing/assets/og.jpg","description":"مكمّل غذائي للرجال — طاقة، تركيز، أداء وحيوية. تركيبة طبيعية، الدفع عند الاستلام وتوصيل لكل المغرب.","brand":{"@type":"Brand","name":"AVA PRO"},"category":"Dietary Supplement","offers":{"@type":"AggregateOffer","priceCurrency":"MAD","lowPrice":"499","highPrice":"1199","offerCount":"3","availability":"https://schema.org/InStock"}}
+</script>
+
 <!-- ════════════════════════════════════════════════════════════════
      👉 À MODIFIER (CMD/CTRL+F) :
      1) WA_NUMBER  → ton vrai numéro WhatsApp (dans <script>, tout en bas)
@@ -189,6 +194,8 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .brandword::after{content:"";display:block;height:4px;margin:16px auto 0;width:46%;border-radius:4px;
   background:var(--grad);box-shadow:0 0 22px rgba(56,208,255,.8);animation:barGrow 3.4s ease-in-out infinite}
 @keyframes barGrow{0%,100%{width:38%;opacity:.6}50%{width:74%;opacity:1}}
+.hero-grid.in .brandword{animation:shimmer 6s linear infinite,brandIn 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes brandIn{0%{opacity:0;transform:translateY(18px) scale(.9)}60%{opacity:1}100%{opacity:1;transform:none}}
 .hero .sub{color:var(--muted);font-size:clamp(1rem,2.6vw,1.2rem);max-width:600px;margin:0 auto 28px}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
 .hero-price{color:var(--muted);font-size:.95rem;margin:0 0 22px}
@@ -247,6 +254,29 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .pain{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:var(--radius-sm);
   background:var(--surface);border:1px solid var(--line);font-weight:700;font-size:.96rem}
 .pain .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);flex:none;box-shadow:0 0 12px var(--cyan)}
+
+/* ── Comparatif بلا / مع ── */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:740px;margin:36px auto 0}
+@media(min-width:680px){ .compare{gap:18px} }
+.cmp{position:relative;border-radius:var(--radius);padding:20px 16px;border:1px solid var(--line);overflow:hidden}
+@media(min-width:680px){ .cmp{padding:26px 22px} }
+.cmp-no{background:linear-gradient(180deg,rgba(255,95,95,.06),rgba(255,255,255,.012))}
+.cmp-yes{border-color:var(--blue);background:linear-gradient(180deg,rgba(47,127,240,.10),rgba(255,255,255,.02))}
+.cmp-yes::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(140deg,rgba(120,180,255,.8),transparent 45%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.cmp-head{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+.cmp-yes .cmp-head{color:var(--blue-2)}
+.cmp-ic{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none}
+.cmp-ic svg{width:15px;height:15px}
+.cmp-ic.no{background:rgba(255,95,95,.14);color:#ff9a9a;border:1px solid rgba(255,95,95,.32)}
+.cmp-ic.yes{background:var(--grad);color:#05122c}
+.cmp ul{list-style:none;display:grid;gap:12px}
+.cmp li{display:flex;align-items:flex-start;gap:9px;font-size:.95rem;line-height:1.4;color:var(--muted)}
+.cmp-yes li{color:var(--text);font-weight:600}
+.cmp li::before{content:"";width:7px;height:7px;border-radius:50%;margin-top:7px;flex:none}
+.cmp-no li::before{background:#ff9a9a;opacity:.55}
+.cmp-yes li::before{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
 
 /* ── Benefits (bilingue, style marque) ── */
 .benefits{background:linear-gradient(180deg,transparent,rgba(8,15,36,.5),transparent)}
@@ -556,13 +586,25 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <h2 class="title">واش كتحس بالطاقة ناقصة؟</h2>
       <p class="lead">الضغط والروتين اليومي كيأثرو على طاقتك، تركيزك وثقتك. AVA PRO جزء من routine كتعاونك ترجع الإحساس بالقوة والحضور.</p>
     </div>
-    <div class="pain-grid stagger">
-      <div class="pain"><span class="dot"></span>تعب يومي</div>
-      <div class="pain"><span class="dot"></span>ضغط وتوتر</div>
-      <div class="pain"><span class="dot"></span>طاقة ناقصة</div>
-      <div class="pain"><span class="dot"></span>ثقة ناقصة</div>
-      <div class="pain"><span class="dot"></span>حضور ضعيف</div>
-      <div class="pain"><span class="dot"></span>توازن ناقص</div>
+    <div class="compare stagger">
+      <div class="cmp cmp-no">
+        <div class="cmp-head"><span class="cmp-ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>بلا AVA PRO</div>
+        <ul>
+          <li>تعب وطاقة ناقصة</li>
+          <li>تركيز مشتت</li>
+          <li>ضغط وتوتر</li>
+          <li>حضور وثقة ضعاف</li>
+        </ul>
+      </div>
+      <div class="cmp cmp-yes">
+        <div class="cmp-head"><span class="cmp-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>مع AVA PRO</div>
+        <ul>
+          <li>طاقة وحيوية كل يوم</li>
+          <li>تركيز وصفا ذهني</li>
+          <li>توازن وهدوء</li>
+          <li>ثقة وحضور أقوى</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -605,10 +647,10 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <p class="lead">أربعة مكوّنات معروفة فمجال الطاقة، التحمّل والحيوية عند الرجال.</p>
     </div>
     <div class="orb-grid stagger">
-      <div class="orbcard"><div class="orb"><img src="assets/ing/tongkat.webp" alt="Tongkat Ali"></div><div class="en">Tongkat Ali</div><small>دعم الحيوية والطاقة الرجالية</small></div>
-      <div class="orbcard"><div class="orb"><img src="assets/ing/ginseng.webp" alt="Ginseng"></div><div class="en">Ginseng</div><small>طاقة، تركيز ومقاومة التعب</small></div>
-      <div class="orbcard"><div class="orb"><img src="assets/ing/maca.webp" alt="Maca"></div><div class="en">Maca</div><small>تحمّل وحيوية</small></div>
-      <div class="orbcard"><div class="orb"><img src="assets/ing/larginine.webp" alt="L-Arginine"></div><div class="en">L-Arginine</div><small>دعم الدورة الدموية والأداء</small></div>
+      <div class="orbcard"><div class="orb"><img src="assets/ing/tongkat.webp" alt="Tongkat Ali" width="150" height="150" loading="lazy"></div><div class="en">Tongkat Ali</div><small>دعم الحيوية والطاقة الرجالية</small></div>
+      <div class="orbcard"><div class="orb"><img src="assets/ing/ginseng.webp" alt="Ginseng" width="150" height="150" loading="lazy"></div><div class="en">Ginseng</div><small>طاقة، تركيز ومقاومة التعب</small></div>
+      <div class="orbcard"><div class="orb"><img src="assets/ing/maca.webp" alt="Maca" width="150" height="150" loading="lazy"></div><div class="en">Maca</div><small>تحمّل وحيوية</small></div>
+      <div class="orbcard"><div class="orb"><img src="assets/ing/larginine.webp" alt="L-Arginine" width="150" height="150" loading="lazy"></div><div class="en">L-Arginine</div><small>دعم الدورة الدموية والأداء</small></div>
     </div>
   </div>
 </section>
