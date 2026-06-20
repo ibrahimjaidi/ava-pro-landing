@@ -54,7 +54,7 @@
   --grad-chrome:linear-gradient(120deg,#dfeaff,#8fb6ff 40%,#cfe0ff 60%,#7aa0ff);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{
   font-family:'Tajawal',system-ui,sans-serif;background:var(--bg);color:var(--text);
   line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:74px;position:relative;
@@ -144,7 +144,9 @@ header .btn{padding:10px 18px;font-size:.92rem}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;text-align:start}
   .hero-grid .stage{order:0;margin:0;width:min(540px,108%);justify-self:center}
   .hero-copy{text-align:start}
-  .hero-copy h1{margin:0 0 18px;max-width:none}
+  .hero-copy h1{margin:0 0 16px;max-width:none}
+  .hero-copy .brandword{margin-inline:0}
+  .hero-copy .brandword::after{margin-inline:0}
   .hero-copy .sub{margin:0 0 28px;max-width:540px}
   .hero-copy .hero-cta,.hero-copy .badges{justify-content:flex-start}
 }
@@ -178,9 +180,15 @@ header .btn{padding:10px 18px;font-size:.92rem}
   filter:drop-shadow(0 30px 50px rgba(4,12,40,.7));animation:heroFloat 7s ease-in-out infinite;transition:opacity .6s}
 .box3d-ready .box-fallback{opacity:0;animation:none}
 @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.hero h1{font-size:clamp(2rem,6.6vw,3.5rem);font-weight:900;margin:6px auto 16px;max-width:15ch}
-.hero h1 .grad-text{display:block;font-size:1.2em;margin-top:8px;letter-spacing:.03em;line-height:1.05;
-  filter:drop-shadow(0 2px 20px rgba(47,127,240,.5))}
+.hero h1{font-size:clamp(1.9rem,5.4vw,3.1rem);font-weight:900;margin:6px auto 14px;max-width:18ch;line-height:1.2}
+.brandword{display:block;width:max-content;max-width:100%;margin:14px auto 0;font-family:'Oxanium',sans-serif;font-weight:800;
+  font-size:clamp(3.3rem,14vw,6.4rem);line-height:.9;letter-spacing:.02em;
+  background:var(--grad-chrome);-webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:240% auto;animation:shimmer 6s linear infinite;
+  filter:drop-shadow(0 8px 34px rgba(47,127,240,.6)) drop-shadow(0 1px 0 rgba(255,255,255,.22));position:relative}
+.brandword::after{content:"";display:block;height:4px;margin:16px auto 0;width:46%;border-radius:4px;
+  background:var(--grad);box-shadow:0 0 22px rgba(56,208,255,.8);animation:barGrow 3.4s ease-in-out infinite}
+@keyframes barGrow{0%,100%{width:38%;opacity:.6}50%{width:74%;opacity:1}}
 .hero .sub{color:var(--muted);font-size:clamp(1rem,2.6vw,1.2rem);max-width:600px;margin:0 auto 28px}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
 .hero-price{color:var(--muted);font-size:.95rem;margin:0 0 22px}
@@ -202,6 +210,29 @@ header .btn{padding:10px 18px;font-size:.92rem}
   font-size:.98rem;color:var(--muted);white-space:nowrap;display:inline-flex;align-items:center;gap:42px}
 .marquee span::after{content:"◆";color:var(--blue);font-size:.7rem}
 .marquee:hover .track{animation-play-state:paused}
+
+/* ── Power pillars (attributs masculins) ── */
+.pillars{padding:32px 0;border-block:1px solid var(--line);
+  background:radial-gradient(80% 130% at 50% 0%,rgba(47,127,240,.10),transparent 70%),rgba(8,15,36,.4)}
+.pill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:760px){ .pill-grid{grid-template-columns:repeat(4,1fr);gap:18px} }
+.pillar{position:relative;text-align:center;padding:24px 14px;border-radius:var(--radius);overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);
+  transition:transform .3s,border-color .3s}
+.pillar:hover{transform:translateY(-4px);border-color:var(--line-2)}
+.pico{position:relative;width:62px;height:62px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 35%,rgba(47,127,240,.32),rgba(12,24,56,.55));border:1px solid var(--line-2)}
+.pico svg{width:28px;height:28px;color:#bcd8ff;position:relative;z-index:1}
+.pico::before{content:"";position:absolute;inset:-2px;border-radius:50%;
+  background:conic-gradient(from 0deg,transparent,rgba(56,208,255,.75),rgba(47,127,240,.1),transparent 58%);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));
+  mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));animation:spin 8s linear infinite}
+.pillar:nth-child(2) .pico::before{animation-duration:11s}
+.pillar:nth-child(3) .pico::before{animation-duration:9.5s;animation-direction:reverse}
+.pillar:nth-child(4) .pico::before{animation-duration:13s}
+.pen{display:block;font-family:'Chakra Petch',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  font-size:.92rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.par{display:block;color:var(--muted);font-size:.88rem;margin-top:3px}
 
 /* ── Glass cards ── */
 .glass{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
@@ -465,7 +496,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
   <div class="wrap reveal hero-grid">
     <div class="hero-copy">
       <span class="eyebrow en">Premium Men's Formula</span>
-      <h1>رجّع طاقتك، ثقتك وحضورك مع <span class="grad-text en">AVA&nbsp;PRO</span></h1>
+      <h1>رجّع طاقتك، ثقتك وحضورك مع<span class="brandword">AVA&nbsp;PRO</span></h1>
       <p class="sub">تركيبة بريميوم بمكوّنات طبيعية، مصمّمة للرجال اللي بغاو يحافظو على الطاقة، التركيز، الأداء والثقة فحياتهم اليومية.</p>
       <div class="hero-cta">
         <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
@@ -491,7 +522,31 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 </section>
 
 <!-- Marquee -->
-<div class="marquee" aria-hidden="true"><div class="track" id="track" dir="ltr"><span class="en">Stay Pro</span><span class="en">Advanced Men's Formula</span><span class="en">Stay Sharp</span><span class="en">Stay Strong</span><span class="en">This is how a real man should feel</span><span class="en">AVA PRO</span></div></div>
+<div class="marquee" aria-hidden="true"><div class="track" id="track" dir="ltr"><span class="en">Stay Pro</span><span class="en">Train · Focus · Perform</span><span class="en">Advanced Men's Formula</span><span class="en">Stay Sharp</span><span class="en">Stay Strong</span><span class="en">This is how a real man should feel</span><span class="en">AVA PRO</span></div></div>
+
+<!-- POWER PILLARS -->
+<section class="pillars">
+  <div class="wrap reveal">
+    <div class="pill-grid stagger">
+      <div class="pillar">
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+        <span class="pen">Energy</span><span class="par">طاقة يومية</span>
+      </div>
+      <div class="pillar">
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <span class="pen">Focus</span><span class="par">تركيز وصفا ذهني</span>
+      </div>
+      <div class="pillar">
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6.5 7v10M17.5 7v10M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg></span>
+        <span class="pen">Strength</span><span class="par">قوة وأداء</span>
+      </div>
+      <div class="pillar">
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 21C7 17 4 14 4 10a4 4 0 018-1 4 4 0 018 1c0 4-3 7-8 11z"/></svg></span>
+        <span class="pen">Vitality</span><span class="par">حيوية وحضور</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PROBLEM -->
 <section class="section-pad">
@@ -499,7 +554,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
     <div class="center">
       <span class="eyebrow">المشكل</span>
       <h2 class="title">واش كتحس بالطاقة ناقصة؟</h2>
-      <p class="lead">الضغط، التعب وروتين الحياة اليومي يقدرو يأثرو على الطاقة، التركيز والثقة ديالك. AVA PRO جا باش يكون جزء من routine يومية كتعاونك ترجع الإحساس بالقوة والحضور.</p>
+      <p class="lead">الضغط والروتين اليومي كيأثرو على طاقتك، تركيزك وثقتك. AVA PRO جزء من routine كتعاونك ترجع الإحساس بالقوة والحضور.</p>
     </div>
     <div class="pain-grid stagger">
       <div class="pain"><span class="dot"></span>تعب يومي</div>
@@ -520,12 +575,12 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <h2 class="title">شنو غادي تحس بيه؟</h2>
     </div>
     <div class="ben-grid stagger">
-      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><div><span class="en">More Energy &amp; Stamina</span><b>طاقة وتحمّل أكثر</b></div></div>
-      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><div><span class="en">Better Focus</span><b>تركيز أحسن</b></div></div>
-      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><div><span class="en">Stronger Performance</span><b>أداء أقوى</b></div></div>
-      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><div><span class="en">Higher Confidence</span><b>ثقة أكبر فراسك</b></div></div>
-      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><div><span class="en">Vitality &amp; Presence</span><b>حيوية وحضور أقوى</b></div></div>
-      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><div><span class="en">Simple Daily Routine</span><b>routine بسيطة</b></div></div>
+      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span><div><span class="en">More Energy &amp; Stamina</span><b>طاقة وتحمّل أكثر</b></div></div>
+      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span><div><span class="en">Better Focus</span><b>تركيز أحسن</b></div></div>
+      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6.5 7v10M17.5 7v10M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg></span><div><span class="en">Stronger Performance</span><b>أداء أقوى</b></div></div>
+      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span><div><span class="en">Higher Confidence</span><b>ثقة أكبر فراسك</b></div></div>
+      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M12 21C7 17 4 14 4 10a4 4 0 018-1 4 4 0 018 1c0 4-3 7-8 11z"/></svg></span><div><span class="en">Vitality &amp; Presence</span><b>حيوية وحضور أقوى</b></div></div>
+      <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v4h-4"/></svg></span><div><span class="en">Simple Daily Routine</span><b>routine بسيطة</b></div></div>
     </div>
   </div>
 </section>
@@ -565,7 +620,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
     <div class="sol-body">
       <span class="eyebrow">الحل</span>
       <h2 class="title">AVA PRO… الروتين الجديد ديالك</h2>
-      <p class="lead">تركيبة طبيعية ومدروسة، كتجمع مكوّنات معروفة فمجال الطاقة والحيوية، باش تعاونك تحافظ على أداء يومي أفضل وثقة أكبر.</p>
+      <p class="lead">تركيبة طبيعية كتجمع مكوّنات معروفة فمجال الطاقة والحيوية — باش تحافظ على أداء يومي أفضل وثقة أكبر.</p>
       <ul class="sol-list">
         <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>تركيبة طبيعية</li>
         <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>سهل الاستعمال — routine يومية</li>
