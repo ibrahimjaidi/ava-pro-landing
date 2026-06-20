@@ -524,6 +524,8 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 .step:hover{transform:translateY(-4px)}
 .s-num{position:absolute;top:12px;inset-inline-end:18px;font-family:'Oxanium',sans-serif;font-weight:800;
   font-size:1.8rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(120,170,255,.45);opacity:.65}
+.step .en2{text-align:center}
+@media(max-width:759px){ .s-num{position:static;display:block;text-align:center;margin:0 auto 6px;font-size:1.4rem} }
 .s-ic{position:relative;width:62px;height:62px;margin:6px auto 16px;border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 50% 35%,rgba(47,127,240,.34),rgba(12,24,56,.55));border:1px solid var(--line-2);
   box-shadow:0 0 0 5px rgba(47,127,240,.10)}
@@ -825,7 +827,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <!-- FORM -->
 <section class="section-pad" id="form">
   <div class="wrap reveal">
-    <div class="center"><span class="eyebrow">الطلب</span><h2 class="title">أكّد الطلب ديالك</h2><p class="lead">عمّر المعلومات وفريقنا غادي يتواصل معاك باش يأكد الطلب والعنوان — كتخلّص فقط منين توصلك السلعة.</p></div>
+    <div class="center"><span class="eyebrow en">Order · الطلب</span><h2 class="title">أكّد الطلب ديالك</h2><p class="t-en">Confirm your order</p><p class="lead">عمّر المعلومات وفريقنا غادي يتواصل معاك باش يأكد الطلب والعنوان — كتخلّص فقط منين توصلك السلعة.</p><p class="lead-en" dir="ltr">Fill in your details and our team will contact you to confirm the order and address — you only pay when it reaches your door.</p></div>
     <form class="form-card glass" id="orderForm" novalidate>
       <div class="field"><label for="f-name">الاسم الكامل <span class="req">*</span><span class="en2">Full name</span></label><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="الاسم والنسب"></div>
       <div class="field-row">
