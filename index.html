@@ -7,6 +7,17 @@
 <meta name="description" content="AVA PRO — تركيبة بريميوم للرجال: طاقة، تركيز، أداء وثقة. مكوّنات طبيعية (Tongkat Ali, Ginseng, Maca, L-Arginine). الدفع عند الاستلام وتوصيل سري حتى لباب الدار." />
 <meta name="theme-color" content="#060a18" />
 
+<!-- Partage social (WhatsApp / Facebook / Instagram) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AVA PRO — طاقة، ثقة وأداء للرجال" />
+<meta property="og:description" content="مكمّل غذائي بريميوم بتركيبة طبيعية. الدفع عند الاستلام وتوصيل سري لكل المغرب." />
+<meta property="og:image" content="https://ibrahimjaidi.github.io/ava-pro-landing/assets/og.jpg" />
+<meta property="og:url" content="https://ibrahimjaidi.github.io/ava-pro-landing/" />
+<meta property="og:locale" content="ar_MA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AVA PRO — طاقة، ثقة وأداء للرجال" />
+<meta name="twitter:image" content="https://ibrahimjaidi.github.io/ava-pro-landing/assets/og.jpg" />
+
 <!-- ════════════════════════════════════════════════════════════════
      👉 À MODIFIER (CMD/CTRL+F) :
      1) WA_NUMBER  → ton vrai numéro WhatsApp (dans <script>, tout en bas)
@@ -179,7 +190,9 @@ header .btn{padding:10px 18px;font-size:.92rem}
 @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero h1{font-size:clamp(2rem,6.6vw,3.5rem);font-weight:900;margin:6px auto 16px;max-width:15ch}
 .hero .sub{color:var(--muted);font-size:clamp(1rem,2.6vw,1.2rem);max-width:600px;margin:0 auto 28px}
-.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.hero-price{color:var(--muted);font-size:.95rem;margin:0 0 22px}
+.hero-price b{color:var(--blue-2)}
 @media(max-width:480px){ .hero-cta .btn{width:100%} }
 .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:700;color:var(--muted);
@@ -367,6 +380,22 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 @media(max-width:759px){ .wa-float{display:none} }
 .btn-sm{padding:10px 20px;font-size:.92rem}
 
+/* ── Prix avec ancrage ── */
+.pack .price .old{-webkit-text-fill-color:var(--muted-2);font-size:1.1rem;font-weight:600;text-decoration:line-through;margin-inline-end:10px;vertical-align:middle}
+.form-reassure{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;
+  color:#9fe0bf;font-weight:700;font-size:.92rem;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.28);
+  border-radius:var(--radius-sm);padding:11px 14px;margin:4px 0 12px}
+/* ── Réassurance ── */
+.re-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:38px}
+@media(min-width:760px){ .re-grid{grid-template-columns:repeat(4,1fr)} }
+.re{text-align:center;padding:26px 18px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.re .ico{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:rgba(47,127,240,.1);border:1px solid var(--line-2);margin-bottom:6px}
+.re .ico svg{width:26px;height:26px;color:var(--blue-2)}
+.re b{font-size:1.05rem}
+.re small{color:var(--muted);font-size:.86rem;line-height:1.5}
+.re-note{text-align:center;color:var(--muted);font-size:.94rem;margin:28px auto 0;max-width:640px;
+  padding:16px 20px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--surface)}
+
 /* ── More effects ── */
 #progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:100;
   background:var(--grad);box-shadow:0 0 14px rgba(56,208,255,.85);transition:width .12s ease-out}
@@ -472,6 +501,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <div class="hero-cta">
         <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
       </div>
+      <p class="hero-price">ابدأ من <b>499 درهم</b> · توصيل لكل المغرب · خلّص منين توصلك</p>
       <div class="badges">
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>الدفع عند الاستلام</span>
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>توصيل سري</span>
@@ -578,13 +608,17 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<section class="trust">
-  <div class="wrap stagger">
-    <div class="t"><div class="v num">4</div><small>مكوّنات نشيطة · Actives</small></div>
-    <div class="t"><div class="v num">100%</div><small>دفع عند الاستلام · COD</small></div>
-    <div class="t"><div class="v en">ISO 22000</div><small>معيار الجودة</small></div>
-    <div class="t"><div class="v en">Lab Tested</div><small>تم اختباره مخبرياً</small></div>
+<!-- REASSURANCE -->
+<section class="reassure section-pad">
+  <div class="wrap reveal">
+    <div class="center"><span class="eyebrow">الثقة</span><h2 class="title">علاش تثيق بـ AVA PRO؟</h2></div>
+    <div class="re-grid stagger">
+      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg></div><b>مُختبر مخبرياً</b><small>Lab Tested — جودة موثوقة</small></div>
+      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><b>معايير ISO 22000</b><small>تصنيع وفق معايير الجودة</small></div>
+      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 4-9 16-9 0 8-4 12-9 12z"/><path d="M4 20c2-4 5-6 8-7"/></svg></div><b>تركيبة طبيعية</b><small>بدون مواد ممنوعة · Banned Substance Free</small></div>
+      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div><b>توصيل سري لكل المغرب</b><small>والدفع عند الاستلام</small></div>
+    </div>
+    <p class="re-note">مكمّل غذائي طبيعي — ماشي دواء. منتج أصلي ومضمون الجودة. رضاك هو الأولوية، وأي سؤال الفريق ديالنا حاضر عبر WhatsApp.</p>
   </div>
 </section>
 
@@ -625,25 +659,25 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
     <div class="packs-grid stagger">
       <div class="pack glass">
         <div class="qty">علبة واحدة</div><div class="label">للتجربة</div>
-        <div class="price" data-prix>السعر قريباً<small>الدفع عند الاستلام</small></div>
+        <div class="price">499 درهم<small>الدفع عند الاستلام · توصيل لكل المغرب</small></div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>باش تجرب AVA PRO</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>توصيل سري</li></ul>
-        <button class="btn btn-ghost btn-block" data-pack="علبة واحدة — للتجربة">نطلب دابا</button>
+        <button class="btn btn-ghost btn-block" data-pack="علبة واحدة — 499 درهم">نطلب دابا</button>
       </div>
       <div class="pack glass featured">
         <span class="ribbon en">Best Value</span>
-        <div class="qty">تلت علب</div><div class="label">العرض الأكثر اختياراً</div>
-        <div class="price" data-prix>السعر قريباً<small>الدفع عند الاستلام</small></div>
-        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>routine كاملة</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>أحسن قيمة</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>توصيل سري حتى لباب الدار</li></ul>
-        <button class="btn btn-primary btn-block" data-pack="تلت علب — العرض الأكثر اختياراً">نطلب دابا</button>
+        <div class="qty">تلت علب</div><div class="label">العرض الأكثر اختياراً · أفضل قيمة</div>
+        <div class="price"><s class="old">1497</s>1199 درهم<small>وفّر 298 درهم · أقل من 400 درهم/علبة</small></div>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>routine كاملة (3 أشهر)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>أحسن قيمة — وفّر 298 درهم</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>توصيل مجاني وسري حتى لباب الدار</li></ul>
+        <button class="btn btn-primary btn-block" data-pack="تلت علب — 1199 درهم">نطلب دابا</button>
       </div>
       <div class="pack glass">
-        <div class="qty">جوج علب</div><div class="label">Routine — الأكثر توازناً</div>
-        <div class="price" data-prix>السعر قريباً<small>الدفع عند الاستلام</small></div>
-        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>للاستعمال المنتظم</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>توصيل سري</li></ul>
-        <button class="btn btn-ghost btn-block" data-pack="جوج علب — Routine">نطلب دابا</button>
+        <div class="qty">جوج علب</div><div class="label">روتين شهرين — الأكثر توازناً</div>
+        <div class="price"><s class="old">998</s>849 درهم<small>وفّر 149 درهم · الدفع عند الاستلام</small></div>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>للاستعمال المنتظم (شهرين)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>وفّر 149 درهم · توصيل سري</li></ul>
+        <button class="btn btn-ghost btn-block" data-pack="جوج علب — 849 درهم">نطلب دابا</button>
       </div>
     </div>
-    <div class="fomo"><span>عرض محدود</span><span>الكمية محدودة حسب المخزون</span><span>الطلبات المؤكدة اليوم كتدوز للمعالجة بسرعة</span></div>
+    <div class="fomo"><span>عرض الإطلاق — لمدة محدودة</span><span>الكمية محدودة حسب المخزون</span><span>الباك ديال 3 علب هو الأكثر طلباً</span><span>الطلبات المؤكدة اليوم كتدوز للتحضير بسرعة</span></div>
   </div>
 </section>
 
@@ -655,20 +689,26 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <div class="field"><label for="f-name">الاسم الكامل <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="الاسم والنسب"></div>
       <div class="field-row">
         <div class="field"><label for="f-phone">رقم الهاتف / WhatsApp <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="06 ** ** ** **"></div>
-        <div class="field"><label for="f-city">المدينة <span class="req">*</span></label><input id="f-city" name="city" type="text" required placeholder="المدينة"></div>
+        <div class="field"><label for="f-city">المدينة <span class="req">*</span></label>
+          <select id="f-city" name="city" required>
+            <option value="">اختار المدينة...</option>
+            <option>الدار البيضاء</option><option>الرباط</option><option>مراكش</option><option>فاس</option><option>طنجة</option><option>أكادير</option><option>مكناس</option><option>وجدة</option><option>القنيطرة</option><option>تطوان</option><option>سلا</option><option>الجديدة</option><option>بني ملال</option><option>الناظور</option><option>خريبكة</option><option>سطات</option><option>المحمدية</option><option>برشيد</option><option>تازة</option><option>العيون</option><option>الداخلة</option><option>مدينة أخرى</option>
+          </select>
+        </div>
       </div>
       <div class="field"><label for="f-address">العنوان <span class="req">*</span></label><input id="f-address" name="address" type="text" required placeholder="الحي، الشارع، رقم الدار..."></div>
       <div class="field"><label for="f-offer">العرض المختار <span class="req">*</span></label>
         <select id="f-offer" name="offer" required>
           <option value="">اختار العرض...</option>
-          <option value="علبة واحدة — للتجربة">علبة واحدة — للتجربة</option>
-          <option value="جوج علب — Routine">جوج علب — Routine</option>
-          <option value="تلت علب — العرض الأكثر اختياراً">تلت علب — العرض الأكثر اختياراً</option>
+          <option value="تلت علب — 1199 درهم">تلت علب (3) — 1199 درهم · الأكثر اختياراً</option>
+          <option value="جوج علب — 849 درهم">جوج علب (2) — 849 درهم</option>
+          <option value="علبة واحدة — 499 درهم">علبة واحدة — 499 درهم</option>
         </select>
       </div>
       <div class="field"><label for="f-note">ملاحظة (اختياري)</label><textarea id="f-note" name="note" placeholder="أي معلومة كتعاوننا فالتوصيل..."></textarea></div>
-      <button type="submit" class="btn btn-primary btn-block" style="margin-top:6px">تأكيد الطلب</button>
-      <p class="trust-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>الدفع عند الاستلام، والتوصيل سري حتى لباب الدار.</p>
+      <p class="form-reassure">🔒 بدون أي خلاص دابا — كتخلّص فقط منين توصلك السلعة لباب الدار.</p>
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:4px">تأكيد الطلب — الدفع عند الاستلام</button>
+      <p class="trust-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>توصيل سري حتى لباب الدار · دعم عبر WhatsApp.</p>
     </form>
     <div id="confirm" class="glass">
       <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
@@ -691,6 +731,10 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <details class="faq-item"><summary class="faq-q">كيفاش نستعمل AVA PRO؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">حسب الجرعة الموصى بها على العبوة، وما تفوّتش الجرعة المحددة.</div></details>
       <details class="faq-item"><summary class="faq-q">واش مناسب للجميع؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">مصمّم للبالغين (+18). إلا كنت عندك حالة صحية خاصة، استشر مختص قبل الاستعمال.</div></details>
       <details class="faq-item"><summary class="faq-q">واش خاصني نستشير طبيب؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إلا كنت عندك مرض، كتاخد دواء، ولا عندك شك، كننصحوك تستشير مختص قبل الاستعمال.</div></details>
+      <details class="faq-item"><summary class="faq-q">واش المنتج أصلي؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إيه، AVA PRO منتج أصلي مصنوع وفق معايير الجودة (ISO 22000) ومُختبر مخبرياً. كتوصلك العبوة مغلقة وأصلية.</div></details>
+      <details class="faq-item"><summary class="faq-q">واش النتائج مضمونة؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">AVA PRO مكمّل غذائي كيدخل ضمن روتين صحي. النتائج كتختلف من شخص لآخر حسب نمط الحياة والاستعمال المنتظم.</div></details>
+      <details class="faq-item"><summary class="faq-q">شحال خاصني ناخدو باش نحس بالفرق؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">يُنصح بالاستعمال المنتظم ضمن روتين يومي. لهذا كثير من الرجال كيختارو باك 2 ولا 3 علب باش يكملو روتين كامل.</div></details>
+      <details class="faq-item"><summary class="faq-q">علاش ناخد 2 ولا 3 علب؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">باش تكمّل روتين منتظم وتستافد من أحسن قيمة: باك 3 علب كيوفّر ليك 298 درهم (أقل من 400 درهم للعلبة) مع توصيل مجاني.</div></details>
       <details class="faq-item"><summary class="faq-q">كيفاش نتواصل مع الدعم؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">عبر WhatsApp — الفريق ديالنا حاضر باش يجاوبك على أي سؤال.</div></details>
     </div>
   </div>
@@ -726,6 +770,30 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 /* ════ 👉 NUMÉRO WHATSAPP (format international, sans + ni espaces). Ex Maroc : 2126XXXXXXXX ════ */
 const WA_NUMBER = '212600000000';
 
+/* ════════════════════════════════════════════════════════════════
+   👉 PIXELS / ANALYTICS — colle tes IDs ici (laisse vide = désactivé)
+═════════════════════════════════════════════════════════════════════ */
+const PIXELS = { meta:'', tiktok:'', ga4:'' };  // ex: meta:'123456789', tiktok:'CXXXXXX', ga4:'G-XXXXXXX'
+
+(function initPixels(){
+  if(PIXELS.meta){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',PIXELS.meta); fbq('track','PageView');
+  }
+  if(PIXELS.tiktok){
+    !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=d.createElement('script');o.type='text/javascript';o.async=!0;o.src=i+'?sdkid='+e+'&lib='+t;var a=d.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a)};ttq.load(PIXELS.tiktok);ttq.page()}(window,document,'ttq');
+  }
+  if(PIXELS.ga4){
+    var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id='+PIXELS.ga4;document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',PIXELS.ga4);
+  }
+})();
+function trackEvent(name, params){
+  try{ if(window.fbq) fbq('track', name, params||{}); }catch(e){}
+  try{ if(window.ttq) ttq.track(name, params||{}); }catch(e){}
+  try{ if(window.gtag) gtag('event', name, params||{}); }catch(e){}
+}
+
 const root=document.documentElement;
 root.classList.add('js');
 if('scrollRestoration' in history) history.scrollRestoration='manual';
@@ -741,7 +809,7 @@ document.getElementById('iSkip').addEventListener('click',endIntro);
 if(reduce){ endIntro(); } else { window.addEventListener('load',()=>setTimeout(endIntro,5400)); setTimeout(endIntro,6500); }
 
 /* WhatsApp links */
-document.querySelectorAll('[data-wa]').forEach(el=>{el.href=waLink(el.getAttribute('data-wa'));el.target='_blank';el.rel='noopener';});
+document.querySelectorAll('[data-wa]').forEach(el=>{el.href=waLink(el.getAttribute('data-wa'));el.target='_blank';el.rel='noopener';el.addEventListener('click',()=>trackEvent('Contact'));});
 
 /* Marquee duplicate for seamless loop */
 const track=document.getElementById('track'); if(track) track.innerHTML+=track.innerHTML;
@@ -764,17 +832,20 @@ revealCheck();
 /* Packs -> form */
 document.querySelectorAll('[data-pack]').forEach(btn=>btn.addEventListener('click',()=>{
   const offer=btn.getAttribute('data-pack'); const sel=document.getElementById('f-offer');
+  trackEvent('AddToCart',{content_name:offer});
   const opt=[...sel.options].find(o=>o.value&&offer.includes(o.value.split('—')[0].trim())); if(opt)sel.value=opt.value;
   document.getElementById('form').scrollIntoView({behavior:'smooth'}); setTimeout(()=>document.getElementById('f-name').focus(),500);
 }));
 
 /* Order form -> WhatsApp */
 const form=document.getElementById('orderForm');
+form.addEventListener('focusin',()=>{ if(!form.dataset.started){ form.dataset.started=1; trackEvent('InitiateCheckout'); } });
 form.addEventListener('submit',e=>{
   e.preventDefault(); if(!form.checkValidity()){form.reportValidity();return;}
   const d=new FormData(form);
   const msg=`🛒 طلب جديد — AVA PRO\n———————————\n👤 الاسم: ${d.get('name')}\n📞 الهاتف: ${d.get('phone')}\n🏙️ المدينة: ${d.get('city')}\n📍 العنوان: ${d.get('address')}\n📦 العرض: ${d.get('offer')}\n`+(d.get('note')?`📝 ملاحظة: ${d.get('note')}\n`:'')+`———————————\n💵 الدفع عند الاستلام`;
   const link=waLink(msg); const c=document.getElementById('confirmWa'); c.href=link; c.target='_blank';
+  trackEvent('Lead',{content_name:d.get('offer')||'',city:d.get('city')||''});
   form.style.display='none'; const box=document.getElementById('confirm'); box.classList.add('show');
   box.scrollIntoView({behavior:'smooth',block:'center'}); window.open(link,'_blank','noopener');
 });
