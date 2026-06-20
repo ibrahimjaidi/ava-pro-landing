@@ -97,6 +97,16 @@ h2.title{font-size:clamp(1.8rem,5.2vw,2.8rem);text-align:center;margin-bottom:14
 .center .title::after{content:"";display:block;width:54px;height:3px;margin:16px auto 0;border-radius:3px;
   background:var(--grad);box-shadow:0 0 14px rgba(56,208,255,.6)}
 .lead{color:var(--muted);font-size:clamp(1rem,2.4vw,1.18rem);max-width:660px;margin-inline:auto;text-align:center}
+/* ── Bilingue EN/AR ── */
+.t-en{display:block;font-family:'Chakra Petch',sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  font-size:.8rem;color:var(--blue-2);margin-top:11px;text-align:center;direction:ltr}
+.lead-en{color:var(--muted-2);font-size:.95rem;max-width:620px;margin:8px auto 0;text-align:center;line-height:1.55;direction:ltr}
+.hero-en{font-family:'Chakra Petch',sans-serif;font-weight:600;letter-spacing:.03em;color:var(--blue-2);
+  font-size:clamp(.95rem,2.3vw,1.12rem);margin:-2px 0 16px;direction:ltr}
+.en2{display:block;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:.74rem;letter-spacing:.05em;color:var(--muted-2);margin-top:3px;direction:ltr;text-align:right}
+.qty .en2,.hero-price .en2,.life .en2{text-align:center}
+.a-en{display:block;color:var(--muted-2);font-size:.9rem;margin-top:7px;line-height:1.6;direction:ltr}
+.sol-body .t-en,.sol-body .lead-en{text-align:right;margin-inline:0}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .section-pad{padding:58px 0}
 @media(min-width:760px){ .section-pad{padding:76px 0} }
@@ -580,17 +590,18 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <section class="hero">
   <div class="wrap reveal hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow en">Premium Men's Formula</span>
+      <span class="eyebrow en">Premium Men's Formula · تركيبة بريميوم</span>
       <h1><span class="w">رجّع</span> <span class="w">طاقتك،</span> <span class="w">ثقتك</span> <span class="w">وحضورك</span> <span class="w">مع</span><span class="brandword">AVA&nbsp;PRO</span></h1>
+      <p class="hero-en" dir="ltr">Reclaim your energy, focus &amp; presence — every day.</p>
       <p class="sub">مكمّل طبيعي بريميوم للرجال — طاقة، تركيز وحضور أقوى فروتين يومي بسيط.</p>
       <div class="hero-cta">
-        <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
+        <a href="#packs" class="btn btn-primary">طلب دابا · Order Now (COD)</a>
       </div>
-      <p class="hero-price">ابدأ من <b>499 درهم</b> · توصيل لكل المغرب · خلّص منين توصلك</p>
+      <p class="hero-price">ابدأ من <b>499 درهم</b> · توصيل لكل المغرب · خلّص منين توصلك<span class="en2" dir="ltr" style="margin-top:5px">From 499 MAD · Delivery across Morocco · Pay on delivery</span></p>
       <div class="badges">
-        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>الدفع عند الاستلام</span>
-        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>توصيل سري</span>
-        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>حتى لباب الدار</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>الدفع عند الاستلام · COD</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>توصيل سري · Discreet</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>حتى لباب الدار · To your door</span>
       </div>
     </div>
     <div class="stage" id="stage">
@@ -637,13 +648,15 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <section class="section-pad">
   <div class="wrap reveal">
     <div class="center">
-      <span class="eyebrow">المشكل</span>
+      <span class="eyebrow en">The Problem · المشكل</span>
       <h2 class="title">واش كتحس بالطاقة ناقصة؟</h2>
+      <p class="t-en">Feeling low on energy?</p>
       <p class="lead">الضغط والروتين اليومي كيأثرو على طاقتك، تركيزك وثقتك. AVA PRO جزء من routine كتعاونك ترجع الإحساس بالقوة والحضور.</p>
+      <p class="lead-en" dir="ltr">Daily stress and routine wear down your energy, focus and confidence. AVA PRO is part of a simple routine that helps you feel strong and present again.</p>
     </div>
     <div class="compare stagger">
       <div class="cmp cmp-no">
-        <div class="cmp-head"><span class="cmp-ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>بلا AVA PRO</div>
+        <div class="cmp-head"><span class="cmp-ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span>بلا AVA PRO<span class="en2">Without AVA PRO</span></span></div>
         <ul>
           <li>تعب وطاقة ناقصة</li>
           <li>تركيز مشتت</li>
@@ -652,7 +665,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
         </ul>
       </div>
       <div class="cmp cmp-yes">
-        <div class="cmp-head"><span class="cmp-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>مع AVA PRO</div>
+        <div class="cmp-head"><span class="cmp-ic yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>مع AVA PRO<span class="en2">With AVA PRO</span></span></div>
         <ul>
           <li>طاقة وحيوية كل يوم</li>
           <li>تركيز وصفا ذهني</li>
@@ -670,6 +683,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
     <div class="center">
       <span class="eyebrow en">Why AVA PRO · علاش تختار</span>
       <h2 class="title">شنو غادي تحس بيه؟</h2>
+      <p class="t-en">What you'll feel</p>
     </div>
     <div class="ben-grid stagger">
       <div class="ben glass"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span><div><span class="en">More Energy &amp; Stamina</span><b>طاقة وتحمّل أكثر</b></div></div>
@@ -690,7 +704,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
   <div class="lc reveal">
     <div class="l-line"></div>
     <h2 dir="ltr">This is how a<br><span class="grad-text">real man</span> should feel</h2>
-    <p>طاقة، ثقة وحضور — كل يوم.</p>
+    <p>طاقة، ثقة وحضور — كل يوم.<span class="en2" dir="ltr" style="margin-top:5px">Energy, confidence &amp; presence — every day.</span></p>
   </div>
 </section>
 
@@ -700,7 +714,9 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
     <div class="center">
       <span class="eyebrow en">Key Ingredients · المكوّنات</span>
       <h2 class="title">مكوّنات طبيعية مدروسة</h2>
+      <p class="t-en">Natural, studied ingredients</p>
       <p class="lead">أربعة مكوّنات معروفة فمجال الطاقة، التحمّل والحيوية عند الرجال.</p>
+      <p class="lead-en" dir="ltr">Four ingredients well known for supporting men's energy, stamina and vitality.</p>
     </div>
     <div class="orb-grid stagger">
       <div class="orbcard"><div class="orb"><img src="assets/ing/tongkat.webp" alt="Tongkat Ali" width="150" height="150" loading="lazy"></div><div class="en">Tongkat Ali</div><small>دعم الحيوية والطاقة الرجالية</small></div>
@@ -716,14 +732,16 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
   <div class="wrap reveal sol-layout">
     <div class="sol-media"><img src="assets/product-standing-v2.webp" alt="علبة AVA PRO" width="478" height="696" loading="lazy"></div>
     <div class="sol-body">
-      <span class="eyebrow">الحل</span>
+      <span class="eyebrow en">The Solution · الحل</span>
       <h2 class="title">AVA PRO… الروتين الجديد ديالك</h2>
+      <p class="t-en">AVA PRO — your new routine</p>
       <p class="lead">تركيبة طبيعية كتجمع مكوّنات معروفة فمجال الطاقة والحيوية — باش تحافظ على أداء يومي أفضل وثقة أكبر.</p>
+      <p class="lead-en" dir="ltr">A natural formula combining ingredients known for energy and vitality — to help you keep better daily performance and more confidence.</p>
       <ul class="sol-list">
-        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>تركيبة طبيعية</li>
-        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>سهل الاستعمال — routine يومية</li>
-        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>مناسب للرجال النشيطين</li>
-        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>الدفع عند الاستلام · توصيل سري</li>
+        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>تركيبة طبيعية<span class="en2">Natural formula</span></span></li>
+        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>سهل الاستعمال — routine يومية<span class="en2">Easy daily routine</span></span></li>
+        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>مناسب للرجال النشيطين<span class="en2">For active men</span></span></li>
+        <li><span class="chk-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span>الدفع عند الاستلام · توصيل سري<span class="en2">Cash on delivery · discreet</span></span></li>
       </ul>
     </div>
   </div>
@@ -732,14 +750,14 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <!-- REASSURANCE -->
 <section class="reassure section-pad">
   <div class="wrap reveal">
-    <div class="center"><span class="eyebrow">الثقة</span><h2 class="title">علاش تثيق بـ AVA PRO؟</h2></div>
+    <div class="center"><span class="eyebrow en">Trust · الثقة</span><h2 class="title">علاش تثيق بـ AVA PRO؟</h2><p class="t-en">Why trust AVA PRO?</p></div>
     <div class="re-grid stagger">
       <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg></div><b>مُختبر مخبرياً</b><small>Lab Tested — جودة موثوقة</small></div>
-      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><b>معايير ISO 22000</b><small>تصنيع وفق معايير الجودة</small></div>
+      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><b>معايير ISO 22000</b><small>Made to ISO 22000 standards · تصنيع وفق المعايير</small></div>
       <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 4-9 16-9 0 8-4 12-9 12z"/><path d="M4 20c2-4 5-6 8-7"/></svg></div><b>تركيبة طبيعية</b><small>بدون مواد ممنوعة · Banned Substance Free</small></div>
-      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div><b>توصيل سري لكل المغرب</b><small>والدفع عند الاستلام</small></div>
+      <div class="re glass"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div><b>توصيل سري لكل المغرب</b><small>Discreet delivery · الدفع عند الاستلام</small></div>
     </div>
-    <p class="re-note">مكمّل غذائي طبيعي — ماشي دواء. منتج أصلي ومضمون الجودة. رضاك هو الأولوية، وأي سؤال الفريق ديالنا حاضر عبر WhatsApp.</p>
+    <p class="re-note">مكمّل غذائي طبيعي — ماشي دواء. منتج أصلي ومضمون الجودة. رضاك هو الأولوية، وأي سؤال الفريق ديالنا حاضر عبر WhatsApp.<span class="a-en" dir="ltr">A natural food supplement — not a medicine. Genuine, quality-checked product. Your satisfaction comes first, and our team is available on WhatsApp.</span></p>
   </div>
 </section>
 
@@ -747,14 +765,16 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <section class="section-pad">
   <div class="wrap reveal" style="max-width:720px">
     <div class="center">
-      <span class="eyebrow">الاستعمال</span>
+      <span class="eyebrow en">How to use · الاستعمال</span>
       <h2 class="title">طريقة الاستعمال</h2>
+      <p class="t-en">How to use</p>
       <p class="lead">استعمل AVA PRO حسب الجرعة الموصى بها على العبوة. ما تفوّتش الجرعة المحددة. إلا كنت عندك مرض، كتستعمل دواء، ولا عندك شي شك، استشر مختص.</p>
+      <p class="lead-en" dir="ltr">Use AVA PRO as directed on the pack. Do not exceed the recommended dose. If you have a medical condition, take medication, or have any doubt, consult a professional.</p>
     </div>
     <div class="use-badges">
-      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>استعمال بسيط</span>
-      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>routine سهلة</span>
-      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>للبالغين فقط (+18)</span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>استعمال بسيط · Simple use</span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>routine سهلة · Easy routine</span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>للبالغين فقط (+18) · Adults only</span>
     </div>
   </div>
 </section>
@@ -764,11 +784,11 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <!-- PROCESS -->
 <section class="process section-pad">
   <div class="wrap reveal">
-    <div class="center"><span class="eyebrow en">How it works · كيفاش كتخدم</span><h2 class="title">3 خطوات وصافي</h2></div>
+    <div class="center"><span class="eyebrow en">How it works · كيفاش كتخدم</span><h2 class="title">3 خطوات وصافي</h2><p class="t-en">Just 3 steps</p></div>
     <div class="steps stagger">
-      <div class="step"><span class="s-num">01</span><div class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg></div><h3>طلب دابا</h3><p>عمّر الفورم ولا عيّط لينا عبر WhatsApp.</p></div>
-      <div class="step"><span class="s-num">02</span><div class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.8 19.8 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>كنعيّطو ليك</h3><p>الفريق كيأكد الطلب والعنوان معاك.</p></div>
-      <div class="step"><span class="s-num">03</span><div class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="14" height="12" rx="1.5"/><path d="M15 8h4l4 4v4h-8"/><circle cx="6" cy="18.5" r="1.8"/><circle cx="18" cy="18.5" r="1.8"/></svg></div><h3>التوصيل والدفع</h3><p>توصيل سري حتى لباب الدار، والدفع عند الاستلام.</p></div>
+      <div class="step"><span class="s-num">01</span><div class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg></div><h3>طلب دابا<span class="en2">Order now</span></h3><p>عمّر الفورم ولا عيّط لينا عبر WhatsApp.<span class="a-en" dir="ltr">Fill the form or message us on WhatsApp.</span></p></div>
+      <div class="step"><span class="s-num">02</span><div class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.8 19.8 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>كنعيّطو ليك<span class="en2">We call you</span></h3><p>الفريق كيأكد الطلب والعنوان معاك.<span class="a-en" dir="ltr">Our team confirms your order and address.</span></p></div>
+      <div class="step"><span class="s-num">03</span><div class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="14" height="12" rx="1.5"/><path d="M15 8h4l4 4v4h-8"/><circle cx="6" cy="18.5" r="1.8"/><circle cx="18" cy="18.5" r="1.8"/></svg></div><h3>التوصيل والدفع<span class="en2">Delivery &amp; payment</span></h3><p>توصيل سري حتى لباب الدار، والدفع عند الاستلام.<span class="a-en" dir="ltr">Discreet delivery to your door — pay on delivery.</span></p></div>
     </div>
   </div>
 </section>
@@ -776,26 +796,26 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <!-- PACKS -->
 <section class="section-pad" id="packs">
   <div class="wrap reveal">
-    <div class="center"><span class="eyebrow">العروض</span><h2 class="title">اختار العرض اللي مناسبك</h2><p class="lead">كل العروض بالدفع عند الاستلام وتوصيل سري. باك 3 علب = أفضل قيمة + توصيل مجاني.</p></div>
+    <div class="center"><span class="eyebrow en">Offers · العروض</span><h2 class="title">اختار العرض اللي مناسبك</h2><p class="t-en">Choose your pack</p><p class="lead">كل العروض بالدفع عند الاستلام وتوصيل سري. باك 3 علب = أفضل قيمة + توصيل مجاني.</p><p class="lead-en" dir="ltr">All packs: cash on delivery &amp; discreet shipping. The 3-pack = best value + free delivery.</p></div>
     <div class="packs-grid stagger">
       <div class="pack glass">
-        <div class="qty">علبة واحدة</div><div class="label">للتجربة</div>
+        <div class="qty">علبة واحدة<span class="en2">Single pack</span></div><div class="label">للتجربة · Try it</div>
         <div class="price">499 درهم<small>الدفع عند الاستلام · توصيل لكل المغرب</small></div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>باش تجرب AVA PRO</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>توصيل سري</li></ul>
-        <button class="btn btn-ghost btn-block" data-pack="علبة واحدة — 499 درهم">نطلب دابا</button>
+        <button class="btn btn-ghost btn-block" data-pack="علبة واحدة — 499 درهم">نطلب دابا · Order</button>
       </div>
       <div class="pack glass featured">
         <span class="ribbon en">Best Value</span>
-        <div class="qty">تلت علب</div><div class="label">العرض الأكثر اختياراً · أفضل قيمة</div>
+        <div class="qty">تلت علب<span class="en2">3 packs</span></div><div class="label">الأكثر اختياراً · Best value</div>
         <div class="price"><s class="old">1497</s>1199 درهم<small>وفّر 298 درهم · أقل من 400 درهم/علبة</small></div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>routine كاملة (3 أشهر)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>أحسن قيمة — وفّر 298 درهم</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>توصيل مجاني وسري حتى لباب الدار</li></ul>
-        <button class="btn btn-primary btn-block" data-pack="تلت علب — 1199 درهم">نطلب دابا</button>
+        <button class="btn btn-primary btn-block" data-pack="تلت علب — 1199 درهم">نطلب دابا · Order</button>
       </div>
       <div class="pack glass">
-        <div class="qty">جوج علب</div><div class="label">روتين شهرين — الأكثر توازناً</div>
+        <div class="qty">جوج علب<span class="en2">2 packs</span></div><div class="label">روتين شهرين · 2-month routine</div>
         <div class="price"><s class="old">998</s>849 درهم<small>وفّر 149 درهم · الدفع عند الاستلام</small></div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>للاستعمال المنتظم (شهرين)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>وفّر 149 درهم · توصيل سري</li></ul>
-        <button class="btn btn-ghost btn-block" data-pack="جوج علب — 849 درهم">نطلب دابا</button>
+        <button class="btn btn-ghost btn-block" data-pack="جوج علب — 849 درهم">نطلب دابا · Order</button>
       </div>
     </div>
     <div class="fomo"><span>الدفع عند الاستلام — بلا خطر</span><span>توصيل مجاني مع باك 3 علب</span><span>الباك ديال 3 علب هو الأكثر طلباً</span><span>كنأكدو الطلب بسرعة عبر WhatsApp</span></div>
@@ -807,18 +827,18 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
   <div class="wrap reveal">
     <div class="center"><span class="eyebrow">الطلب</span><h2 class="title">أكّد الطلب ديالك</h2><p class="lead">عمّر المعلومات وفريقنا غادي يتواصل معاك باش يأكد الطلب والعنوان — كتخلّص فقط منين توصلك السلعة.</p></div>
     <form class="form-card glass" id="orderForm" novalidate>
-      <div class="field"><label for="f-name">الاسم الكامل <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="الاسم والنسب"></div>
+      <div class="field"><label for="f-name">الاسم الكامل <span class="req">*</span><span class="en2">Full name</span></label><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="الاسم والنسب"></div>
       <div class="field-row">
-        <div class="field"><label for="f-phone">رقم الهاتف / WhatsApp <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="06 ** ** ** **"></div>
-        <div class="field"><label for="f-city">المدينة <span class="req">*</span></label>
+        <div class="field"><label for="f-phone">رقم الهاتف / WhatsApp <span class="req">*</span><span class="en2">Phone / WhatsApp</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="06 ** ** ** **"></div>
+        <div class="field"><label for="f-city">المدينة <span class="req">*</span><span class="en2">City</span></label>
           <select id="f-city" name="city" required>
             <option value="">اختار المدينة...</option>
             <option>الدار البيضاء</option><option>الرباط</option><option>مراكش</option><option>فاس</option><option>طنجة</option><option>أكادير</option><option>مكناس</option><option>وجدة</option><option>القنيطرة</option><option>تطوان</option><option>سلا</option><option>الجديدة</option><option>بني ملال</option><option>الناظور</option><option>خريبكة</option><option>سطات</option><option>المحمدية</option><option>برشيد</option><option>تازة</option><option>العيون</option><option>الداخلة</option><option>مدينة أخرى</option>
           </select>
         </div>
       </div>
-      <div class="field"><label for="f-address">العنوان <span class="req">*</span></label><input id="f-address" name="address" type="text" required placeholder="الحي، الشارع، رقم الدار..."></div>
-      <div class="field"><label for="f-offer">العرض المختار <span class="req">*</span></label>
+      <div class="field"><label for="f-address">العنوان <span class="req">*</span><span class="en2">Address</span></label><input id="f-address" name="address" type="text" required placeholder="الحي، الشارع، رقم الدار..."></div>
+      <div class="field"><label for="f-offer">العرض المختار <span class="req">*</span><span class="en2">Selected offer</span></label>
         <select id="f-offer" name="offer" required>
           <option value="">اختار العرض...</option>
           <option value="تلت علب — 1199 درهم">تلت علب (3) — 1199 درهم · الأكثر اختياراً</option>
@@ -826,16 +846,18 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
           <option value="علبة واحدة — 499 درهم">علبة واحدة — 499 درهم</option>
         </select>
       </div>
-      <div class="field"><label for="f-note">ملاحظة (اختياري)</label><textarea id="f-note" name="note" placeholder="أي معلومة كتعاوننا فالتوصيل..."></textarea></div>
-      <p class="form-reassure">🔒 بدون أي خلاص دابا — كتخلّص فقط منين توصلك السلعة لباب الدار.</p>
-      <button type="submit" class="btn btn-primary btn-block" style="margin-top:4px">تأكيد الطلب — الدفع عند الاستلام</button>
-      <p class="trust-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>توصيل سري حتى لباب الدار · دعم عبر WhatsApp.</p>
+      <div class="field"><label for="f-note">ملاحظة (اختياري) <span class="en2">Note (optional)</span></label><textarea id="f-note" name="note" placeholder="أي معلومة كتعاوننا فالتوصيل..."></textarea></div>
+      <p class="form-reassure"><span>🔒 بدون أي خلاص دابا — كتخلّص فقط منين توصلك السلعة لباب الدار.<span class="en2" dir="ltr">No payment now — you only pay when it reaches your door.</span></span></p>
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:4px">تأكيد الطلب · Confirm order (COD)</button>
+      <p class="trust-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><span>توصيل سري حتى لباب الدار · دعم عبر WhatsApp.<span class="en2" dir="ltr">Discreet delivery · WhatsApp support.</span></span></p>
     </form>
     <div id="confirm" class="glass">
       <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
       <h2 class="title" style="font-size:1.7rem">توصلنا بالطلب ديالك ✅</h2>
+      <p class="t-en">We received your order ✅</p>
       <p class="lead">غادي يتواصل معك الفريق ديالنا قريباً باش نأكدو الطلب والتوصيل.</p>
-      <div class="hero-cta" style="margin-top:24px"><a href="#" class="btn btn-wa" id="confirmWa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>تأكيد عبر WhatsApp</a></div>
+      <p class="lead-en" dir="ltr">Our team will contact you shortly to confirm your order and delivery.</p>
+      <div class="hero-cta" style="margin-top:24px"><a href="#" class="btn btn-wa" id="confirmWa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>تأكيد عبر WhatsApp · Confirm</a></div>
     </div>
   </div>
 </section>
@@ -843,20 +865,20 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <!-- FAQ -->
 <section class="section-pad">
   <div class="wrap reveal">
-    <div class="center"><span class="eyebrow">FAQ</span><h2 class="title">أسئلة كيطرحوها بزّاف</h2></div>
+    <div class="center"><span class="eyebrow en">FAQ · أسئلة شائعة</span><h2 class="title">أسئلة كيطرحوها بزّاف</h2><p class="t-en">Frequently asked questions</p></div>
     <div class="faq">
-      <details class="faq-item"><summary class="faq-q">كيفاش نطلب؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">عمّر الفورم بالاسم، الهاتف والعنوان وأكّد الطلب. الفريق ديالنا غادي يعيط ليك باش يثبّت الطلب والتوصيل.</div></details>
-      <details class="faq-item"><summary class="faq-q">واش الدفع عند الاستلام؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إيه، كتخلّص منين توصلك السلعة لباب الدار. ما كتخلّص والو قبل.</div></details>
-      <details class="faq-item"><summary class="faq-q">واش التوصيل سري؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إيه، التغليف عادي وحيادي وما فيه حتى إشارة للمحتوى. خصوصيتك مهمة عندنا.</div></details>
-      <details class="faq-item"><summary class="faq-q">شحال مدة التوصيل؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a" data-delai>عادةً مابين 24 و72 ساعة حسب المدينة.</div></details>
-      <details class="faq-item"><summary class="faq-q">كيفاش نستعمل AVA PRO؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">حسب الجرعة الموصى بها على العبوة، وما تفوّتش الجرعة المحددة.</div></details>
-      <details class="faq-item"><summary class="faq-q">واش مناسب للجميع؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">مصمّم للبالغين (+18). إلا كنت عندك حالة صحية خاصة، استشر مختص قبل الاستعمال.</div></details>
-      <details class="faq-item"><summary class="faq-q">واش خاصني نستشير طبيب؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إلا كنت عندك مرض، كتاخد دواء، ولا عندك شك، كننصحوك تستشير مختص قبل الاستعمال.</div></details>
-      <details class="faq-item"><summary class="faq-q">واش المنتج أصلي؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إيه، AVA PRO منتج أصلي مصنوع وفق معايير الجودة (ISO 22000) ومُختبر مخبرياً. كتوصلك العبوة مغلقة وأصلية.</div></details>
-      <details class="faq-item"><summary class="faq-q">واش النتائج مضمونة؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">AVA PRO مكمّل غذائي كيدخل ضمن روتين صحي. النتائج كتختلف من شخص لآخر حسب نمط الحياة والاستعمال المنتظم.</div></details>
-      <details class="faq-item"><summary class="faq-q">شحال خاصني ناخدو باش نحس بالفرق؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">يُنصح بالاستعمال المنتظم ضمن روتين يومي. لهذا كثير من الرجال كيختارو باك 2 ولا 3 علب باش يكملو روتين كامل.</div></details>
-      <details class="faq-item"><summary class="faq-q">علاش ناخد 2 ولا 3 علب؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">باش تكمّل روتين منتظم وتستافد من أحسن قيمة: باك 3 علب كيوفّر ليك 298 درهم (أقل من 400 درهم للعلبة) مع توصيل مجاني.</div></details>
-      <details class="faq-item"><summary class="faq-q">كيفاش نتواصل مع الدعم؟<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">عبر WhatsApp — الفريق ديالنا حاضر باش يجاوبك على أي سؤال.</div></details>
+      <details class="faq-item"><summary class="faq-q"><span>كيفاش نطلب؟<span class="en2">How do I order?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">عمّر الفورم بالاسم، الهاتف والعنوان وأكّد الطلب. الفريق ديالنا غادي يعيط ليك باش يثبّت الطلب والتوصيل.<span class="a-en" dir="ltr">Fill the form with your name, phone and address, then confirm. Our team will call to confirm the order and delivery.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>واش الدفع عند الاستلام؟<span class="en2">Is it cash on delivery?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إيه، كتخلّص منين توصلك السلعة لباب الدار. ما كتخلّص والو قبل.<span class="a-en" dir="ltr">Yes, you pay when the product reaches your door. Nothing is paid before.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>واش التوصيل سري؟<span class="en2">Is delivery discreet?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إيه، التغليف عادي وحيادي وما فيه حتى إشارة للمحتوى. خصوصيتك مهمة عندنا.<span class="a-en" dir="ltr">Yes, the packaging is plain and neutral with no hint of the contents. Your privacy matters to us.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>شحال مدة التوصيل؟<span class="en2">How long is delivery?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a" data-delai>عادةً مابين 24 و72 ساعة حسب المدينة.<span class="a-en" dir="ltr">Usually between 24 and 72 hours depending on the city.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>كيفاش نستعمل AVA PRO؟<span class="en2">How do I use AVA PRO?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">حسب الجرعة الموصى بها على العبوة، وما تفوّتش الجرعة المحددة.<span class="a-en" dir="ltr">As directed on the pack — do not exceed the recommended dose.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>واش مناسب للجميع؟<span class="en2">Is it suitable for everyone?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">مصمّم للبالغين (+18). إلا كنت عندك حالة صحية خاصة، استشر مختص قبل الاستعمال.<span class="a-en" dir="ltr">Designed for adults (+18). If you have a health condition, consult a professional before use.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>واش خاصني نستشير طبيب؟<span class="en2">Should I consult a doctor?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إلا كنت عندك مرض، كتاخد دواء، ولا عندك شك، كننصحوك تستشير مختص قبل الاستعمال.<span class="a-en" dir="ltr">If you have an illness, take medication, or have any doubt, we recommend consulting a professional before use.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>واش المنتج أصلي؟<span class="en2">Is the product genuine?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">إيه، AVA PRO منتج أصلي مصنوع وفق معايير الجودة (ISO 22000) ومُختبر مخبرياً. كتوصلك العبوة مغلقة وأصلية.<span class="a-en" dir="ltr">Yes, AVA PRO is a genuine product made to quality standards (ISO 22000) and lab tested. It arrives sealed and original.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>واش النتائج مضمونة؟<span class="en2">Are results guaranteed?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">AVA PRO مكمّل غذائي كيدخل ضمن روتين صحي. النتائج كتختلف من شخص لآخر حسب نمط الحياة والاستعمال المنتظم.<span class="a-en" dir="ltr">AVA PRO is a food supplement that fits into a healthy routine. Results vary from person to person depending on lifestyle and regular use.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>شحال خاصني ناخدو باش نحس بالفرق؟<span class="en2">How long until I feel a difference?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">يُنصح بالاستعمال المنتظم ضمن روتين يومي. لهذا كثير من الرجال كيختارو باك 2 ولا 3 علب باش يكملو روتين كامل.<span class="a-en" dir="ltr">Regular daily use is recommended. That's why many men choose the 2 or 3-pack to complete a full routine.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>علاش ناخد 2 ولا 3 علب؟<span class="en2">Why take 2 or 3 packs?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">باش تكمّل روتين منتظم وتستافد من أحسن قيمة: باك 3 علب كيوفّر ليك 298 درهم (أقل من 400 درهم للعلبة) مع توصيل مجاني.<span class="a-en" dir="ltr">To keep a regular routine and get the best value: the 3-pack saves you 298 MAD (under 400 MAD/pack) with free delivery.</span></div></details>
+      <details class="faq-item"><summary class="faq-q"><span>كيفاش نتواصل مع الدعم؟<span class="en2">How do I contact support?</span></span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-a">عبر WhatsApp — الفريق ديالنا حاضر باش يجاوبك على أي سؤال.<span class="a-en" dir="ltr">Via WhatsApp — our team is available to answer any question.</span></div></details>
     </div>
   </div>
 </section>
@@ -869,8 +891,9 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
     <h2 dir="ltr">Stay Sharp. Stay Strong. <span class="grad-text">Stay Pro.</span></h2>
     <div class="fline"></div>
     <p class="lead">القوة الحقيقية كتبدأ من روتين يومي — ابدأ ديالك اليوم.</p>
+    <p class="lead-en" dir="ltr">Real strength starts with a daily routine — start yours today.</p>
     <div class="hero-cta">
-      <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
+      <a href="#packs" class="btn btn-primary">طلب دابا · Order Now (COD)</a>
     </div>
   </div>
 </section>
@@ -879,7 +902,7 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 <footer>
   <div class="wrap">
     <div class="brand"><img src="assets/logo.webp" alt="AVA PRO" width="760" height="227"></div>
-    <p class="legal">مكمّل غذائي وماشي دواء. ما كيعوّضش نظام غذائي متوازن ولا استشارة طبية. للبالغين فقط (+18). النتائج كتختلف من شخص لآخر.</p>
+    <p class="legal">مكمّل غذائي وماشي دواء. ما كيعوّضش نظام غذائي متوازن ولا استشارة طبية. للبالغين فقط (+18). النتائج كتختلف من شخص لآخر.<span class="a-en" dir="ltr">A food supplement, not a medicine. It does not replace a balanced diet or medical advice. Adults only (+18). Results vary from person to person.</span></p>
     <p class="copy en" dir="ltr">© <span id="year"></span> AVA PRO — All rights reserved.</p>
   </div>
 </footer>
