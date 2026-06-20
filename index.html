@@ -34,6 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preload" as="image" href="assets/product.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -51,7 +52,7 @@
   --cyan:#38d0ff;
   --text:#eef3fb;
   --muted:#9fb1d4;
-  --muted-2:#5f6f96;
+  --muted-2:#7c8cb2;
   --green:#25d366;
   --radius:20px;
   --radius-sm:14px;
@@ -118,6 +119,9 @@ h2.title{font-size:clamp(1.8rem,5.2vw,2.8rem);text-align:center;margin-bottom:14
 .btn-ghost{background:rgba(255,255,255,.03);color:var(--text);border-color:var(--line-2)}
 .btn-ghost:hover{border-color:var(--blue);color:var(--blue-2)}
 .btn-block{width:100%}
+/* Focus clavier visible (a11y) */
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--blue-2);outline-offset:3px}
 
 /* ── Header ── */
 header.site{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
@@ -548,10 +552,10 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 </head>
 <body class="intro-lock">
 
-<div id="progress"></div>
-<canvas id="energy"></canvas>
-<div class="bg-tint"></div>
-<div class="cursor-glow" id="cursor"></div>
+<div id="progress" aria-hidden="true"></div>
+<canvas id="energy" aria-hidden="true"></canvas>
+<div class="bg-tint" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor" aria-hidden="true"></div>
 
 <!-- Loader premium AVA PRO -->
 <div id="intro">
@@ -593,13 +597,13 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
       <div class="halo"></div><div class="ering"></div><div class="ering r2"></div>
       <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i>
       <div class="tilt" id="tilt">
-        <img class="box-fallback" src="assets/product.webp" alt="AVA PRO" width="880" height="955">
+        <img class="box-fallback" src="assets/product.webp" alt="علبة AVA PRO" width="880" height="955" fetchpriority="high">
         <canvas id="box3d" class="box3d"></canvas>
       </div>
       <div class="sweep"></div>
     </div>
   </div>
-  <div class="scrollcue"></div>
+  <div class="scrollcue" aria-hidden="true"></div>
 </section>
 
 <!-- Marquee -->
