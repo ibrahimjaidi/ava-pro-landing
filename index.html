@@ -327,7 +327,9 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .ingredients{background:linear-gradient(180deg,transparent,rgba(8,15,36,.5),transparent)}
 .orb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 14px;margin-top:46px}
 @media(min-width:860px){ .orb-grid{grid-template-columns:repeat(4,1fr);gap:20px} }
-.orbcard{text-align:center;display:flex;flex-direction:column;align-items:center}
+.orbcard{text-align:center;display:flex;flex-direction:column;align-items:center;transition:transform .3s}
+.orbcard:hover{transform:translateY(-5px)}
+.orbcard:hover .en{color:var(--blue-2)}
 .orb{position:relative;width:min(180px,46vw);aspect-ratio:1;display:grid;place-items:center;margin-bottom:18px;animation:heroFloat 6s ease-in-out infinite}
 .orbcard:nth-child(2) .orb{animation-delay:.6s}.orbcard:nth-child(3) .orb{animation-delay:1.2s}.orbcard:nth-child(4) .orb{animation-delay:1.8s}
 .orb::before{content:"";position:absolute;inset:0;border-radius:50%;
@@ -343,7 +345,7 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .orbcard:hover .orb::before{transform:scale(1.08);opacity:1}
 .orbcard:hover .orb img{transform:scale(1.07) translateY(-2px)}
 .orbcard .en{font-family:'Chakra Petch',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  font-size:.95rem;color:var(--text)}
+  font-size:.95rem;color:var(--text);transition:color .3s}
 .orbcard small{color:var(--muted);font-size:.92rem;margin-top:2px;display:block;max-width:200px}
 
 /* ── Solution two-col ── */
@@ -382,8 +384,10 @@ header .btn{padding:10px 18px;font-size:.92rem}
 @media(min-width:860px){ .packs-grid{grid-template-columns:repeat(3,1fr);align-items:stretch;max-width:none} }
 .pack{display:flex;flex-direction:column;text-align:center;padding:28px 24px;position:relative;overflow:visible;transition:transform .3s}
 .pack:hover{transform:translateY(-5px)}
-.pack.featured{border-color:var(--blue)}
+.pack.featured{border-color:var(--blue);animation:featGlow 3.4s ease-in-out infinite}
 .pack.featured::before{opacity:1;background:linear-gradient(140deg,rgba(120,180,255,.9),rgba(56,208,255,.2) 45%,transparent)}
+@keyframes featGlow{0%,100%{box-shadow:0 0 0 1px rgba(47,127,240,.35),0 14px 40px -18px rgba(47,127,240,.45)}
+  50%{box-shadow:0 0 0 1px rgba(56,208,255,.7),0 20px 54px -14px rgba(56,208,255,.55)}}
 @media(min-width:860px){ .pack.featured{transform:scale(1.05)} .pack.featured:hover{transform:scale(1.05) translateY(-5px)} }
 .pack .ribbon{position:absolute;top:-13px;inset-inline:0;margin-inline:auto;width:max-content;
   font-family:'Chakra Petch',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
@@ -431,9 +435,18 @@ header .btn{padding:10px 18px;font-size:.92rem}
 .faq-a{padding:0 20px 18px;color:var(--muted);font-size:.98rem;line-height:1.8}
 
 /* ── Final ── */
-.final{text-align:center;padding:88px 0;overflow:hidden}
+.final{position:relative;text-align:center;padding:96px 0;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(58% 68% at 50% 48%,rgba(47,127,240,.18),transparent 72%)}
+.final .fring{position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;
+  width:min(680px,118vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(120,170,255,.15);
+  box-shadow:inset 0 0 60px rgba(47,127,240,.08)}
+.final .fring.r2{width:min(440px,82vw);border-color:rgba(120,170,255,.24);animation:pulse 5s ease-in-out infinite}
+.final .wrap{position:relative;z-index:2}
 .final h2{font-family:'Chakra Petch',sans-serif;font-size:clamp(1.7rem,5.4vw,3rem);font-weight:700;letter-spacing:.03em;
-  text-transform:uppercase;margin-bottom:24px}
+  text-transform:uppercase;margin-bottom:10px}
+.final .fline{width:64px;height:3px;margin:14px auto 22px;border-radius:3px;background:var(--grad);box-shadow:0 0 18px rgba(56,208,255,.7)}
+.final .lead{margin-bottom:26px}
 
 /* ── Footer ── */
 footer{border-top:1px solid var(--line);background:rgba(6,10,24,.6);padding:36px 0 28px;text-align:center}
@@ -829,8 +842,12 @@ footer .copy{color:var(--muted-2);font-size:.78rem;font-family:'Chakra Petch',sa
 
 <!-- FINAL -->
 <section class="final">
+  <span class="fring"></span><span class="fring r2"></span>
   <div class="wrap reveal">
+    <span class="eyebrow en">Your Daily Edge</span>
     <h2 dir="ltr">Stay Sharp. Stay Strong. <span class="grad-text">Stay Pro.</span></h2>
+    <div class="fline"></div>
+    <p class="lead">القوة الحقيقية كتبدأ من روتين يومي — ابدأ ديالك اليوم.</p>
     <div class="hero-cta">
       <a href="#packs" class="btn btn-primary">طلب دابا — الدفع عند الاستلام</a>
     </div>
