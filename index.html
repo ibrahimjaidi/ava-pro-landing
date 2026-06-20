@@ -987,9 +987,9 @@ revealCheck();
 /* Scroll rapide + flash vers le formulaire (boutons commander) */
 function smoothTo(y,dur){
   const start=scrollY, dist=y-start, t0=performance.now();
-  if(reduce||Math.abs(dist)<4){ scrollTo(0,y); return; }
+  if(reduce||Math.abs(dist)<4){ scrollTo({top:y,behavior:'instant'}); return; }
   (function step(t){ const p=Math.min((t-t0)/dur,1); const e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
-    scrollTo(0,start+dist*e); if(p<1)requestAnimationFrame(step); })(t0);
+    scrollTo({top:start+dist*e,behavior:'instant'}); if(p<1)requestAnimationFrame(step); })(t0);
 }
 function goForm(focus){
   const el=document.getElementById('form'); if(!el)return;
